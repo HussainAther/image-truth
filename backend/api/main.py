@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from .routes import image_challenge
+app.include_router(image_challenge.router, prefix="/challenge")
+
 app = FastAPI(
     title="Image Truth API",
     description="Backend API for the Image Truth perception game.",
